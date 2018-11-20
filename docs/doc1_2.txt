@@ -1,0 +1,14 @@
+Google Cloud CEO Diane Greene is stepping down at the end of the year.
+In her place, former Oracle president and product leader of its cloud division Thomas Kurian will be joining Google Cloud on 26 November and will move into the role of Google Cloud CEO in 2019. Kurian, a 22-year Oracle veteran, suddenly resigned from the company in September.
+Greene—who served in the post for the past three years—announced in a blog post her intention to continue as CEO through January 2019, after which she will transition to a director on the Alphabet board.
+Greene, for her part, said she will be available as needed after January, and that she interviewed Kurian herself for the position of Google Cloud CEO.
+"I believe that he’ll do an amazing job helping to take Google Cloud to the next level," she wrote in her blog post.
+
+Greene also alluded to the work that she and the team have been doing to bring on more enterprise customers.
+"We have moved Google Cloud from having only two significant customers and a collection of startups to having major Fortune 1000 enterprises betting their future on Google Cloud, something we should accept as a great compliment as well as a huge responsibility," she said.
+Greene said she originally intended to stay at Google for just two years, and now the executive is ready to focus on her passions, which include mentoring and education.
+The CEO for a top AWS and Microsoft Azure partner, who did not want to be identified, said Greene failed to build a channel partner network that could match AWS or Microsoft.
+"Diane Greene just didn't get the cloud channel," said the CEO. "Google has become the cloud no one talks about. It is AWS first, Azure second, then Salesforce and everybody else is a distant fourth or fifth."
+The challenge for Kurian is going to be building a channel program within Google that can help make the search engine giant a respected cloud powerhouse.
+"Kurian's background at Oracle will help him understand the market, but Oracle Cloud is not all that successful compared to AWS and Azure," he said. "AWS and Microsoft both have strong channel programs. It is going to be interesting to see how this plays out under Kurian. I think it is going to come down to how much is Google willing to spend to build a channel network that will go after enterprise customers."
+This article originally appeared at crn.com

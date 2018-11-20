@@ -1,0 +1,23 @@
+SAN FRANCISCO (Reuters) - Former Oracle Corp product chief Thomas Kurian will replace Diane Greene as head of the cloud division at Alphabet Inc’s Google in the coming weeks, Greene announced in a blog post on Friday, after a tumultuous year for the business.
+
+Greene said she had joined Google three years ago with plans to leave after two years and will move into investing and philanthropy in January. She will remain on Alphabet’s board.
+
+Kurian, who spent 22 years at Oracle and had been a close confidante of its founder Larry Ellison, resigned in September after struggling to expand its cloud business.
+
+Greene has served as chief executive of Google Cloud; Kurian will be senior vice president for Google Cloud, a company spokesman said.
+
+Google announced in February that the cloud division, which sells computing services, online data storage and productivity software such as email and spreadsheet tools, was generating more than $1 billion in quarterly revenue.
+
+It faced a setback months later when thousands of Google employees revolted against Greene’s unit supplying the U.S. military with artificial intelligence tools to aid in analyzing drone imagery. Greene responded by announcing the deal would not be renewed.
+
+The backlash over military work prompted an internal committee of top employees to issue company wide principles to govern the use of Google’s artificial intelligence systems, including a ban on using them to develop weaponry. The move essentially limited the cloud unit’s potential customer base.
+
+Google also bowed out from bidding for a $10 billion military cloud computing contract, citing its lack of certifications to handle sensitive data.
+
+Closing and extending such deals would have given Google Cloud a major boost as it tries to catch up to rivals Amazon.com Inc and Microsoft Corp. Oracle’s cloud business trails Google’s.
+
+Steve Koenig, a financial analyst following Oracle for Wedbush Securities, said Kurian is better positioned at Google to drive business sales growth than at his former employer.
+
+“Like Diane Greene, Kurian has serious enterprise chops,” Koenig said. “Google clearly remains serious about scaling up its enterprise business.”
+
+Greene said Kurian interviewed with her, Google CEO Sundar Pichai and long-time infrastructure chief Urs Hölzle and will join Google on Nov. 26.
