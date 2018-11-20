@@ -122,9 +122,21 @@ def bestavg(file_path):
         freq = update_prob(preprocessed_data[max_index], freq)
     return summary
 
+def simplified(file_path):
+    data = remove_symbol(file_path)
+    sentences = split_sentences(data)
+    preprocessed_data = preprocess(sentences)
+    freq = calculate_prob(preprocessed_data)
+    summary = ""
+    while not check_length(summary):
+        max_index = calculate_orig_score(preprocessed_data, freq, find_max(freq))
+        summary += sentences[max_index]
+        summary += " "
+    return summary
+
 def main():
   if len(sys.argv) != 4:
-	  print "Wrong input: [version eg: simplified] [input_file_path] [output_file_path]"
+	  print "Wrong input: [version eg: simplified|bestavg|orig|leading] [input_file_path] [output_file_path]"
 	  exit()
   version = sys.argv[1]
   file_path = sys.argv[2]
@@ -134,6 +146,8 @@ def main():
 	  result = original(file_path)
   elif version == 'bestavg':
 	  result = bestavg(file_path)
+  elif version == 'simplified':
+	  result = simplified(file_path)
   else:
 	  print("More features coming!")
   with open(output_path, "w") as text_file:
