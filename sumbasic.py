@@ -134,6 +134,18 @@ def simplified(file_path):
         summary += " "
     return summary
 
+def leading(file_path):
+    data = remove_symbol(file_path)
+    summary = ""
+    for line in data:
+        sent_text = sent_tokenize(line)
+        first_sen = sent_text[0]
+        summary += first_sen
+        summary += " "
+        if check_length(summary):
+            break
+    return summary
+
 def main():
   if len(sys.argv) != 4:
 	  print "Wrong input: [version eg: simplified|bestavg|orig|leading] [input_file_path] [output_file_path]"
@@ -148,6 +160,8 @@ def main():
 	  result = bestavg(file_path)
   elif version == 'simplified':
 	  result = simplified(file_path)
+  elif version == 'leading':
+	  result = leading(file_path)
   else:
 	  print("More features coming!")
   with open(output_path, "w") as text_file:
