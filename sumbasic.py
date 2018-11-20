@@ -54,7 +54,7 @@ def calculate_prob(preprocessed_data):
 def find_max(dic):
     return max(dic, key=dic.get)
 
-def calculate_score(sentences, dic, max_token):
+def calculate_orig_score(sentences, dic, max_token):
     max_score = 0
     max_index = -1
     for i in range(0, len(sentences)):
@@ -67,6 +67,20 @@ def calculate_score(sentences, dic, max_token):
             if score > max_score:
                 max_score = score
                 max_index = i
+    return max_index
+
+def calculate_bestavg_score(sentences, dic):
+    max_score = 0
+    max_index = -1
+    for i in range(0, len(sentences)):
+        score = 0
+        tokens = sentences[i].split(" ")
+        for word in tokens:
+            score += dic[word]
+        score = score / len(tokens)
+        if score > max_score:
+            max_score = score
+            max_index = i
     return max_index
 
 def update_prob(selected_sentence, dic):
@@ -89,7 +103,20 @@ def original(file_path):
     freq = calculate_prob(preprocessed_data)
     summary = ""
     while not check_length(summary):
-        max_index = calculate_score(preprocessed_data, freq, find_max(freq))
+        max_index = calculate_orig_score(preprocessed_data, freq, find_max(freq))
+        summary += sentences[max_index]
+        summary += " "
+        freq = update_prob(preprocessed_data[max_index], freq)
+    return summary
+
+def bestavg(file_path):
+    data = remove_symbol(file_path)
+    sentences = split_sentences(data)
+    preprocessed_data = preprocess(sentences)
+    freq = calculate_prob(preprocessed_data)
+    summary = ""
+    while not check_length(summary):
+        max_index = calculate_bestavg_score(preprocessed_data, freq)
         summary += sentences[max_index]
         summary += " "
         freq = update_prob(preprocessed_data[max_index], freq)
@@ -102,12 +129,15 @@ def main():
   version = sys.argv[1]
   file_path = sys.argv[2]
   output_path = sys.argv[3]
+  result = ""
   if version == 'orig':
 	  result = original(file_path)
-	  with open(output_path, "w") as text_file:
-    		text_file.write(result)
+  elif version == 'bestavg':
+	  result = bestavg(file_path)
   else:
 	  print("More features coming!")
+  with open(output_path, "w") as text_file:
+      		text_file.write(result)
 
 if __name__== "__main__":
   main()
