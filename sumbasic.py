@@ -1,6 +1,7 @@
 from __future__ import division
 import string
 import sys
+import os
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
 from nltk import FreqDist
@@ -8,14 +9,17 @@ from nltk import sent_tokenize
 import operator
 
 def remove_symbol(filepath):
-    with open(filepath, 'r') as file:
-        data = file.read().splitlines()
-        data = [line for line in data if line is not '']
-    all_ascii = []
-    for line in data:
-        ascii = ''.join(char for char in line if ord(char) < 128)
-        all_ascii.append(ascii)
-    return all_ascii
+    result = []
+    for f in filepath:
+        with open(f, 'r') as file:
+            data = file.read().splitlines()
+            data = [line for line in data if line is not '']
+        all_ascii = []
+        for line in data:
+            ascii = ''.join(char for char in line if ord(char) < 128)
+            all_ascii.append(ascii)
+        result += all_ascii
+    return result
 
 def print_dic(dic):
     for key, value in dic.iteritems():
@@ -147,23 +151,31 @@ def leading(file_path):
     return summary
 
 def main():
-  if len(sys.argv) != 4:
-	  print "Wrong input: [version eg: simplified|bestavg|orig|leading] [input_file_path] [output_file_path]"
-	  exit()
+  if len(sys.argv) != 5:
+      print len(sys.argv)
+      print sys.argv
+      print "Wrong input: [version eg: simplified|bestavg|orig|leading] [input_file_path]"
+      exit()
   version = sys.argv[1]
-  file_path = sys.argv[2]
-  output_path = sys.argv[3]
+  file_path = []
+  file_path.append(sys.argv[2])
+  file_path.append(sys.argv[3])
+  file_path.append(sys.argv[4])
+  one_file = sys.argv[2]
+  id = one_file[10:11]
   result = ""
   if version == 'orig':
-	  result = original(file_path)
+      result = original(file_path)
   elif version == 'bestavg':
 	  result = bestavg(file_path)
   elif version == 'simplified':
-	  result = simplified(file_path)
+      result = simplified(file_path)
   elif version == 'leading':
 	  result = leading(file_path)
   else:
-	  print("More features coming!")
+	  print("No version matched. More features coming!")
+  output_path = "./summary/" + str(version) + "-" + str(id) + ".txt"
+  print result
   with open(output_path, "w") as text_file:
       		text_file.write(result)
 
